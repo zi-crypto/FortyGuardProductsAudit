@@ -26,8 +26,6 @@ independent_research_findings/ → External validation and evidence ledger
 ### 🧪 Audit Highlights
 
 - All 36 findings F1–F36 present with correct severity assignments
-- Duplicate sections removed (previously lines 269–341 of FINDINGS.md)
-- Document flow verified consistent with EVALUATION_PLAN.md
 - No cookie/token values in any documentation
 - Read-only verification: 0 additional credits consumed in round 6
 
@@ -39,4 +37,4 @@ independent_research_findings/ → External validation and evidence ledger
 
 ---
 
-*FortyGuard Product Evaluation — AI-powered product safety and compliance assessment*
+*FortyGuard Product Evaluation*
