@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "tool": "satellite",
+      "http_status": 200,
+      "elapsed_s": 12.643,
+      "cost_credits": null,
+      "trace_latency_ms": null,
+      "result_keys": [],
+      "value": {},
+      "activity_id": null
+    },
+    {
+      "tool": "streetview",
+      "error": "ChunkedEncodingError: Response ended prematurely"
+    }
+  ]
+}

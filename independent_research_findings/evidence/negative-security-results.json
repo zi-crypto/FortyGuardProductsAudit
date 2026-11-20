@@ -1,0 +1,263 @@
+{
+  "generated_at": "2026-11-20",
+  "cases": [
+    {
+      "name": "missing API key",
+      "endpoint": "/v1/env_params",
+      "elapsed_s": 2.933,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 401,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 401, \"details\": {\"message\": \"Missing required 'api-key' header. Send your key in the 'api-key' request header.\"}}",
+        "body_sha256": "a6a0c3485eea43a175b52b4aeeac0e5d09350c0a79155abdc3560e4b0b74f75c",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "malformed API key",
+      "endpoint": "/v1/env_params",
+      "elapsed_s": 0.751,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 401,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 401, \"details\": {\"message\": \"Invalid or unknown API key.\"}}",
+        "body_sha256": "3d46c1da5074c0fe2f4b28f7c18e414b3c074f34d369e63d938288d6776d75eb",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "env missing latitude",
+      "endpoint": "/v1/env_params",
+      "elapsed_s": 1.53,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 422,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 422, \"message\": \"Field 'latitude' is required.\", \"field\": \"latitude\", \"detail\": [{\"type\": \"missing\", \"loc\": [\"body\", \"latitude\"], \"msg\": \"Field required\", \"input\": {\"longitude\": -112.074, \"temperature\": 35, \"date_time\": {\"start_date\": \"2024-07-15\", \"start_time\": \"14:00\", \"filter_type\": 1}, \"analysis\": [\"apparent_temperature_celsius\"]}}]}",
+        "body_sha256": "63b1b7900dd5c6cbe8cd58c6e0b3fc759bc8ef174adadd5cdad772ad0853d839",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "env wrong latitude type",
+      "endpoint": "/v1/env_params",
+      "elapsed_s": 2.415,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 200,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": false, \"status_code\": 200, \"message\": \"Environment Parameters Analysis Submitted Successfully\", \"data\": {\"activity_id\": \"bb864a04-734b-43e5-89a1-653048b5de79\"}}",
+        "body_sha256": "afaad5f2c0b9ff43ba16bdffac3c7164bb12deadabda479a98b268e9b3d97ba0",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "env invalid longitude",
+      "endpoint": "/v1/env_params",
+      "elapsed_s": 1.23,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 422,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 422, \"message\": \"Field 'longitude' is invalid: Input should be greater than or equal to -180\", \"field\": \"longitude\", \"detail\": [{\"type\": \"greater_than_equal\", \"loc\": [\"body\", \"longitude\"], \"msg\": \"Input should be greater than or equal to -180\", \"input\": -181, \"ctx\": {\"ge\": -180.0}}]}",
+        "body_sha256": "003adaec5df304313c56ed8a847f9a1ab6513d86112413d4dbd5219137079b57",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "env invalid date",
+      "endpoint": "/v1/env_params",
+      "elapsed_s": 3.2,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 500,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"message\": \"Something went wrong on our side. Please try again in a moment, or contact support@fortyguard.com if it keeps failing.\"}",
+        "body_sha256": "e5d75b14e50eedde8e016a5aa27b808c6b9fd6baaf553b78c7f4eb7b243fb123",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "env empty analysis",
+      "endpoint": "/v1/env_params",
+      "elapsed_s": 2.327,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 200,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": false, \"status_code\": 200, \"message\": \"Environment Parameters Analysis Submitted Successfully\", \"data\": {\"activity_id\": \"8f442d9a-0f1c-4724-b78b-9390c26df851\"}}",
+        "body_sha256": "b36772c9854cf4847a28ad691dbffd962959630a40f7ab3569c502705c2c6b92",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "heat malformed geojson",
+      "endpoint": "/v1/heatmap",
+      "elapsed_s": 1.343,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 400,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 400, \"message\": \"Polygon 'coordinates' must be a non-empty array of linear rings.\", \"field\": \"polygon_aoi\"}",
+        "body_sha256": "244c15828c6ef02f6c6894e889de924bc9ac0774eded60144bb8de2c3386c7f3",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "heat unclosed polygon",
+      "endpoint": "/v1/heatmap",
+      "elapsed_s": 1.397,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 400,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 400, \"message\": \"Polygon ring is not closed: the first and last positions must be identical.\", \"field\": \"polygon_aoi.coordinates[0]\"}",
+        "body_sha256": "92a844811d798fc0210919e1687cf5078118bc0c34c2bb70a78bf9374e9fa186",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "heat unsupported granularity",
+      "endpoint": "/v1/heatmap",
+      "elapsed_s": 1.264,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 422,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 422, \"message\": \"Field 'granularity' is invalid: Input should be 20, 60, 80 or 100\", \"field\": \"granularity\", \"detail\": [{\"type\": \"literal_error\", \"loc\": [\"body\", \"granularity\"], \"msg\": \"Input should be 20, 60, 80 or 100\", \"input\": 40, \"ctx\": {\"expected\": \"20, 60, 80 or 100\"}}]}",
+        "body_sha256": "0ad5fb2e6689a1ed015b083edd36f977df9bf4d24956120947e0d767a44d623f",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "heat unknown field",
+      "endpoint": "/v1/heatmap",
+      "elapsed_s": 4.713,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 200,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": false, \"status_code\": 200, \"message\": \"Heatmap Submitted Successfully\", \"data\": {\"activity_id\": \"6f528ddd-619d-43c5-9559-b6ff88ea1a5f\"}}",
+        "body_sha256": "c87a7ec20c2aec7e6f88a227712356e70ccad50ac217966d85bbffcc453e84bf",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "sat invalid latitude",
+      "endpoint": "/v1/satellite",
+      "elapsed_s": 1.284,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 422,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 422, \"message\": \"Field 'sat' is required.\", \"field\": \"sat\", \"detail\": [{\"type\": \"missing\", \"loc\": [\"body\", \"sat\"], \"msg\": \"Field required\", \"input\": {\"latitude\": 91, \"longitude\": -112.074, \"date_time\": {\"start_date\": \"2024-07-15\", \"start_time\": \"14:00\", \"filter_type\": 1}, \"granularity\": 80}}]}",
+        "body_sha256": "096365e11ffe71e4b1a49ec0e2b411f669185af6716e571a0a117e7119c54c80",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "sat invalid filter type",
+      "endpoint": "/v1/satellite",
+      "elapsed_s": 1.811,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 422,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 422, \"message\": \"Field 'sat' is required.\", \"field\": \"sat\", \"detail\": [{\"type\": \"missing\", \"loc\": [\"body\", \"sat\"], \"msg\": \"Field required\", \"input\": {\"latitude\": 33.4484, \"longitude\": -112.074, \"date_time\": {\"start_date\": \"2024-07-15\", \"start_time\": \"14:00\", \"filter_type\": 9}, \"granularity\": 80}}, {\"type\": \"literal_error\", \"loc\": [\"body\", \"date_time\", \"filter_type\"], \"msg\": \"Input should be 1, 2, 3 or 4\", \"input\": 9, \"ctx\": {\"expected\": \"1, 2, 3 or 4\"}}]}",
+        "body_sha256": "adf8fbe308d9b3978ba4dfe907b0ac4a449618120e841de6ffa38facedc3c5a0",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "street invalid horizontal angle",
+      "endpoint": "/v1/streetview",
+      "elapsed_s": 2.387,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 200,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": false, \"status_code\": 200, \"message\": \"Street View Segmentation Submitted Successfully\", \"data\": {\"activity_id\": \"2f38f048-a8f7-48db-aa34-9c850b64f519\"}}",
+        "body_sha256": "520afd9542dc2b195b3eff5bf1ab7507705e4b2750657e6c53062bb7f99ef978",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "report invalid analysis",
+      "endpoint": "/v1/heat_intelligence",
+      "elapsed_s": 1.699,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 422,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 422, \"message\": \"Field 'analysis.0' is invalid: Input should be 'geographic', 'environmental', 'urban', 'events' or 'anthropogenic'\", \"field\": \"analysis.0\", \"detail\": [{\"type\": \"literal_error\", \"loc\": [\"body\", \"analysis\", 0], \"msg\": \"Input should be 'geographic', 'environmental', 'urban', 'events' or 'anthropogenic'\", \"input\": \"not-a-valid-analysis\", \"ctx\": {\"expected\": \"'geographic', 'environmental', 'urban', 'events' or 'anthropogenic'\"}}]}",
+        "body_sha256": "0ca4bd9479dfe86da6cfe9bf842a3c44db2d012686a3e1a41c7f07559e083bf7",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "report missing temperature",
+      "endpoint": "/v1/heat_intelligence",
+      "elapsed_s": 1.475,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 422,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 422, \"message\": \"Field 'temperature' is required.\", \"field\": \"temperature\", \"detail\": [{\"type\": \"missing\", \"loc\": [\"body\", \"temperature\"], \"msg\": \"Field required\", \"input\": {\"latitude\": 33.4473, \"longitude\": -112.0744, \"date\": \"2024-07-15\", \"analysis\": [\"environmental\"]}}]}",
+        "body_sha256": "4327dc08be5d48b03333ff63a8a9a3e65cce4ba6167f25dcab27b54fd3ee3d6a",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "routing identical endpoints",
+      "endpoint": "/v1/routing",
+      "elapsed_s": 2.937,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 500,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"message\": \"Something went wrong on our side. Please try again in a moment, or contact support@fortyguard.com if it keeps failing.\"}",
+        "body_sha256": "e5d75b14e50eedde8e016a5aa27b808c6b9fd6baaf553b78c7f4eb7b243fb123",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "routing over 200km straight line",
+      "endpoint": "/v1/routing",
+      "elapsed_s": 2.917,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 200,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": false, \"status_code\": 200, \"message\": \"Routing Submitted Successfully\", \"data\": {\"activity_id\": \"8e2bede9-4cb4-4ab9-87bc-d6c9bc99abe6\"}}",
+        "body_sha256": "5a3d34d3b6d0cc6fd24969b8f75a8c2cfccde6eafa909f37bbd03fb8853ddf21",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "routing invalid departure time",
+      "endpoint": "/v1/routing",
+      "elapsed_s": 1.618,
+      "expected_invalid": true,
+      "result": {
+        "http_status": 422,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 422, \"message\": \"Field 'departure_time' is invalid: Input should be a valid datetime or date, invalid character in year\", \"field\": \"departure_time\", \"detail\": [{\"type\": \"datetime_from_date_parsing\", \"loc\": [\"body\", \"departure_time\"], \"msg\": \"Input should be a valid datetime or date, invalid character in year\", \"input\": \"not-a-date\", \"ctx\": {\"error\": \"invalid character in year\"}}]}",
+        "body_sha256": "dd7d43d003bc3d5d76a7bf0f36c7e04eb046109e12ad2fb9b36a5069e3b65169",
+        "url_has_key": false
+      }
+    },
+    {
+      "name": "key-in-url redacted sentinel",
+      "endpoint": "/v1/status/{id}?api-key=REDACTED_TEST_ONLY",
+      "result": {
+        "http_status": 401,
+        "content_type": "application/json",
+        "body_prefix": "{\"error\": true, \"status_code\": 401, \"details\": {\"message\": \"Missing required 'api-key' header. Send your key in the 'api-key' request header.\"}}",
+        "body_sha256": "a6a0c3485eea43a175b52b4aeeac0e5d09350c0a79155abdc3560e4b0b74f75c",
+        "url_has_key": true
+      }
+    }
+  ]
+}

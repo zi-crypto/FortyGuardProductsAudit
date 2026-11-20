@@ -1,0 +1,141 @@
+{
+  "captured_at_utc": "2026-11-20T14:34:11.079Z",
+  "target": "https://dashboard.fortyguard.com/map",
+  "load_ms": 6272,
+  "audit": {
+    "url": "https://dashboard.fortyguard.com/",
+    "title": "Temperature Dashboard™",
+    "lang": "en",
+    "viewport": [
+      1440,
+      900
+    ],
+    "nodes": 40,
+    "iframes": [],
+    "img_total": 0,
+    "img_missing_alt": 0,
+    "control_total": 0,
+    "control_no_name": 0,
+    "input_total": 0,
+    "input_no_label": 0,
+    "h1": [],
+    "headings": [],
+    "landmarks": {
+      "main": 0,
+      "nav": 0,
+      "header": 0,
+      "footer": 0
+    },
+    "liveRegions": 0,
+    "langOnBody": null,
+    "textSample": ""
+  },
+  "document_cookie_names": [
+    "session_token",
+    "session_refresh_token",
+    "used_google_before",
+    "_ga",
+    "_ga_NDXZD8XT2G",
+    "_clck",
+    "_clsk"
+  ],
+  "responses_total": 22,
+  "responses_fortyguard": [
+    {
+      "url": "https://dashboard.fortyguard.com/map",
+      "status": 200,
+      "type": "Document",
+      "mime": "text/html"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/runtime.44f0bb29849bc751.js",
+      "status": 200,
+      "type": "Script",
+      "mime": "application/javascript"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/polyfills.566d9bd957dcefc1.js",
+      "status": 200,
+      "type": "Script",
+      "mime": "application/javascript"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/styles.aa41daf70b9ce628.css",
+      "status": 200,
+      "type": "Stylesheet",
+      "mime": "text/css"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/assets/fonts/DMSans-Medium.ttf",
+      "status": 200,
+      "type": "Font",
+      "mime": "application/octet-stream"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/main.45db50ba0385ca19.js",
+      "status": 200,
+      "type": "Script",
+      "mime": "application/javascript"
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-NDXZD8XT2G&gtm=45je6bh1v9176656146za208zd9176656146xf1&_p=1795185246459&gcd=13l3l3l3l1l1&npa=0&dma=0&cid=1001947869.1795185247&frm=0&ngs=1&pscdl=noapi&rcb=17&sr=800x600&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CGoogle%2520Chrome%3B157.0.8103.38%7CChromium%3B157.0.8103.38&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115938465~115938468~120213116~120385423~120469145~120469153~121246026~121246034&sid=1795185246&sct=1&seg=0&dl=https%3A%2F%2Fdashboard.fortyguard.com%2Fmap&dt=Temperature%20Dashboard%E2%84%A2&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1897",
+      "status": 204,
+      "type": "Fetch",
+      "mime": "text/plain"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/favicon.ico",
+      "status": 200,
+      "type": "Other",
+      "mime": "image/x-icon"
+    },
+    {
+      "url": "https://dashboard-api.apps.fortyguard.com/auth/verify-access",
+      "status": 200,
+      "type": "Preflight",
+      "mime": "text/plain"
+    },
+    {
+      "url": "https://dashboard-api.apps.fortyguard.com/auth/verify-access",
+      "status": 200,
+      "type": "XHR",
+      "mime": "application/json"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/4.25d49b9f1ea67774.js",
+      "status": 200,
+      "type": "Script",
+      "mime": "application/javascript"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/735.21da47f9fb65e92f.js",
+      "status": 200,
+      "type": "Script",
+      "mime": "application/javascript"
+    },
+    {
+      "url": "https://dashboard.fortyguard.com/872.9010e90af3d8d5e8.js",
+      "status": 200,
+      "type": "Script",
+      "mime": "application/javascript"
+    }
+  ],
+  "failed_requests": [],
+  "console": [
+    {
+      "kind": "console",
+      "level": "warning",
+      "text": "Google Maps JavaScript API has been loaded directly without loading=async. This can result in suboptimal performance. For best-practice loading patterns please see https://goo.gle/js-api-loading"
+    },
+    {
+      "kind": "log",
+      "level": "warning",
+      "text": "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\"> is deprecated. Please include <meta name=\"mobile-web-app-capable\" content=\"yes\">"
+    },
+    {
+      "kind": "console",
+      "level": "error",
+      "text": "ERROR TypeError: Cannot read properties of undefined (reading 'base_subscription')\n    at new D (https://dashboard.fortyguard.com/main.45db50ba0385ca19.js:1:184536)\n    at Object.ɵfac [as factory] (https://dashboard.fortyguard.com/main.45db50ba0385ca19.js:1:190279)\n    at nr.hydrate (https://dashboa"
+    }
+  ]
+}

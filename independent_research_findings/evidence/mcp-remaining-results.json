@@ -1,0 +1,583 @@
+{
+  "generated_at": "2026-11-20",
+  "entries": [
+    {
+      "tool": "report",
+      "submission": {
+        "http_status": 200,
+        "elapsed_s": 7.108,
+        "activity_id": "5f61fa3a-ccbe-499e-b4de-3875970aa7ff",
+        "cost_credits": 8600
+      },
+      "read": {
+        "terminal": {
+          "http_status": 200,
+          "elapsed_s": 4.464,
+          "structured": {
+            "ok": true,
+            "result": {
+              "tool": "report_read",
+              "value": {
+                "status": "completed",
+                "analytics_id": "5f61fa3a-ccbe-499e-b4de-3875970aa7ff",
+                "result_id": null,
+                "report_url": "https://tos-dashboard-prod.s3.amazonaws.com/enterprise_api/v2/accountid%3Dacc%23yv6qAlebfv/type%3Denterprise_api/activity_id%3D5f61fa3a-ccbe-499e-b4de-3875970aa7ff/data.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5NUIOOF6XYBV4HPC%2F20261120%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20261120T142500Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=ce28539b417324ad523e81ebf1963503e3d5efee75692a7556646219199f0baa"
+              },
+              "activity_id": "5f61fa3a-ccbe-499e-b4de-3875970aa7ff",
+              "analytics_id": "5f61fa3a-ccbe-499e-b4de-3875970aa7ff",
+              "evidence": [],
+              "warnings": []
+            },
+            "trace": {
+              "trace_id": "fdc2b354909b",
+              "tool": "report_read",
+              "plan_type": "premium",
+              "decision": "allow",
+              "status": "ok",
+              "latency_ms": 1479,
+              "cost_credits": 0
+            }
+          },
+          "raw_text": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":20,\"result\":{\"content\":[{\"text\":\"{\\\"ok\\\":true,\\\"result\\\":{\\\"tool\\\":\\\"report_read\\\",\\\"value\\\":{\\\"status\\\":\\\"completed\\\",\\\"analytics_id\\\":\\\"5f61fa3a-ccbe-499e-b4de-3875970aa7ff\\\",\\\"result_id\\\":null,\\\"report_url\\\":\\\"https://tos-dashboard-prod.s3.amazonaws.com/enterprise_api/v2/accountid%3Dacc%23yv6qAlebfv/type%3Denterprise_api/activity_id%3D5f61fa3a-ccbe-499e-b4de-3875970aa7ff/data.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5NUIOOF6XYBV4HPC%2F20261120%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20261120T142500Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=ce28539b417324ad523e81ebf1963503e3d5efee75692a7556646219199f0baa\\\"},\\\"activity_id\\\":\\\"5f61fa3a-ccbe-499e-b4de-3875970aa7ff\\\",\\\"analytics_id\\\":\\\"5f61fa3a-ccbe-499e-b4de-3875970aa7ff\\\",\\\"evidence\\\":[],\\\"warnings\\\":[]},\\\"trace\\\":{\\\"trace_id\\\":\\\"fdc2b354909b\\\",\\\"tool\\\":\\\"report_read\\\",\\\"plan_type\\\":\\\"premium\\\",\\\"decision\\\":\\\"allow\\\",\\\"status\\\":\\\"ok\\\",\\\"latency_ms\\\":1479,\\\"cost_credits\\\":0}}\",\"type\":\"text\"}],\"isError\":false,\"structuredContent\":{\"ok\":true,\"result\":{\"tool\":\"report_read\",\"value\":{\"status\":\"completed\",\"analytics_id\":\"5f61fa3a-ccbe-499e-b4de-3875970aa7ff\",\"result_id\":null,\"report_url\":\"https://tos-dashboard-prod.s3.amazonaws.com/enterprise_api/v2/accountid%3Dacc%23yv6qAlebfv/type%3Denterprise_api/activity_id%3D5f61fa3a-ccbe-499e-b4de-3875970aa7ff/data.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5NUIOOF6XYBV4HPC%2F20261120%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20261120T142500Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=ce28539b417324ad523e81ebf1963503e3d5efee75692a7556646219199f0baa\"},\"activity_id\":\"5f61fa3a-ccbe-499e-b4de-3875970aa7ff\",\"analytics_id\":\"5f61fa3a-ccbe-499e-b4de-3875970aa7ff\",\"evidence\":[],\"warnings\":[]},\"trace\":{\"trace_id\":\"fdc2b354909b\",\"tool\":\"report_read\",\"plan_type\":\"premium\",\"decision\":\"allow\",\"status\":\"ok\",\"latency_ms\":1479,\"cost_credits\":0}}}}\r\n\r\n"
+        },
+        "polls": [
+          {
+            "poll": 1,
+            "status": "processing",
+            "elapsed_s": 5.852
+          },
+          {
+            "poll": 2,
+            "status": "processing",
+            "elapsed_s": 6.019
+          },
+          {
+            "poll": 3,
+            "status": "processing",
+            "elapsed_s": 4.544
+          },
+          {
+            "poll": 4,
+            "status": "processing",
+            "elapsed_s": 6.226
+          },
+          {
+            "poll": 5,
+            "status": "processing",
+            "elapsed_s": 5.073
+          },
+          {
+            "poll": 6,
+            "status": "processing",
+            "elapsed_s": 7.076
+          },
+          {
+            "poll": 7,
+            "status": "processing",
+            "elapsed_s": 5.906
+          },
+          {
+            "poll": 8,
+            "status": "processing",
+            "elapsed_s": 7.058
+          },
+          {
+            "poll": 9,
+            "status": "processing",
+            "elapsed_s": 4.814
+          },
+          {
+            "poll": 10,
+            "status": "processing",
+            "elapsed_s": 5.418
+          },
+          {
+            "poll": 11,
+            "status": "processing",
+            "elapsed_s": 3.34
+          },
+          {
+            "poll": 12,
+            "status": "processing",
+            "elapsed_s": 3.608
+          },
+          {
+            "poll": 13,
+            "status": "processing",
+            "elapsed_s": 4.646
+          },
+          {
+            "poll": 14,
+            "status": "processing",
+            "elapsed_s": 4.406
+          },
+          {
+            "poll": 15,
+            "status": "processing",
+            "elapsed_s": 4.905
+          },
+          {
+            "poll": 16,
+            "status": "processing",
+            "elapsed_s": 3.979
+          },
+          {
+            "poll": 17,
+            "status": "processing",
+            "elapsed_s": 5.976
+          },
+          {
+            "poll": 18,
+            "status": "completed",
+            "elapsed_s": 4.464
+          }
+        ],
+        "total_poll_elapsed_s": 144.334
+      }
+    },
+    {
+      "tool": "satellite",
+      "submission": {
+        "http_status": 200,
+        "elapsed_s": 14.252,
+        "activity_id": null,
+        "cost_credits": null
+      }
+    },
+    {
+      "tool": "streetview",
+      "submission": {
+        "http_status": 200,
+        "elapsed_s": 16.479,
+        "activity_id": null,
+        "cost_credits": null
+      }
+    },
+    {
+      "tool": "temperature_routing",
+      "submission": {
+        "http_status": 200,
+        "elapsed_s": 16.791,
+        "activity_id": "08df94a9-9b20-4095-a0af-dbc0762558f4",
+        "cost_credits": 3500
+      },
+      "read": {
+        "terminal": {
+          "http_status": 200,
+          "elapsed_s": 5.892,
+          "structured": {
+            "ok": true,
+            "result": {
+              "tool": "temperature_routing_read",
+              "value": {
+                "activity_id": "08df94a9-9b20-4095-a0af-dbc0762558f4",
+                "status": "completed",
+                "routes": [
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "score": 10,
+                      "scores": [
+                        10
+                      ],
+                      "label": "Only route",
+                      "selected": true,
+                      "distance_km": 1.959,
+                      "duration_min": 2.51,
+                      "thermal": {
+                        "mean_c": 41.927,
+                        "time_weighted_c": 41.929,
+                        "dist_weighted_c": 41.925,
+                        "peak_c": 41.95,
+                        "degree_minutes_above_threshold": 24.91,
+                        "minutes_above_threshold": 2.51,
+                        "threshold_c": 32.0
+                      },
+                      "vs_fastest": {
+                        "distance_pct": 0.0,
+                        "duration_pct": 0.0,
+                        "duration_min_delta": 0.0,
+                        "mean_temp_delta_c": 0.0,
+                        "jaccard": 1.0
+                      },
+                      "segment_temp_c": [
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.89,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95,
+                        41.95
+                      ]
+                    },
+                    "geometry": {
+                      "type": "LineString",
+                      "coordinates": [
+                        [
+                          -112.073816,
+                          33.449313
+                        ],
+                        [
+                          -112.073817,
+                          33.449384
+                        ],
+                        [
+                          -112.07382,
+                          33.449852
+                        ],
+                        [
+                          -112.073821,
+                          33.450018
+                        ],
+                        [
+                          -112.073824,
+                          33.450316
+                        ],
+                        [
+                          -112.073823,
+                          33.450374
+                        ],
+                        [
+                          -112.073824,
+                          33.450454
+                        ],
+                        [
+                          -112.073827,
+                          33.450777
+                        ],
+                        [
+                          -112.073828,
+                          33.450936
+                        ],
+                        [
+                          -112.073828,
+                          33.451024
+                        ],
+                        [
+                          -112.07383,
+                          33.451273
+                        ],
+                        [
+                          -112.073831,
+                          33.451387
+                        ],
+                        [
+                          -112.073836,
+                          33.451534
+                        ],
+                        [
+                          -112.073837,
+                          33.451763
+                        ],
+                        [
+                          -112.073834,
+                          33.452128
+                        ],
+                        [
+                          -112.073832,
+                          33.452337
+                        ],
+                        [
+                          -112.073829,
+                          33.452416
+                        ],
+                        [
+                          -112.073824,
+                          33.452532
+                        ],
+                        [
+                          -112.073816,
+                          33.452871
+                        ],
+                        [
+                          -112.073803,
+                          33.453432
+                        ],
+                        [
+                          -112.073803,
+                          33.453502
+                        ],
+                        [
+                          -112.073801,
+                          33.45365
+                        ],
+                        [
+                          -112.073799,
+                          33.453873
+                        ],
+                        [
+                          -112.073791,
+                          33.454378
+                        ],
+                        [
+                          -112.073792,
+                          33.454528
+                        ],
+                        [
+                          -112.07369,
+                          33.454452
+                        ],
+                        [
+                          -112.073196,
+                          33.454448
+                        ],
+                        [
+                          -112.073181,
+                          33.454448
+                        ],
+                        [
+                          -112.072708,
+                          33.454445
+                        ],
+                        [
+                          -112.072545,
+                          33.454444
+                        ],
+                        [
+                          -112.072444,
+                          33.454449
+                        ],
+                        [
+                          -112.071855,
+                          33.454439
+                        ],
+                        [
+                          -112.071394,
+                          33.454436
+                        ],
+                        [
+                          -112.071273,
+                          33.454435
+                        ],
+                        [
+                          -112.071135,
+                          33.454433
+                        ],
+                        [
+                          -112.070701,
+                          33.454439
+                        ],
+                        [
+                          -112.070598,
+                          33.454438
+                        ],
+                        [
+                          -112.070119,
+                          33.454439
+                        ],
+                        [
+                          -112.06999,
+                          33.454443
+                        ],
+                        [
+                          -112.069867,
+                          33.454444
+                        ],
+                        [
+                          -112.068777,
+                          33.454426
+                        ],
+                        [
+                          -112.068675,
+                          33.454427
+                        ],
+                        [
+                          -112.068636,
+                          33.454427
+                        ],
+                        [
+                          -112.068502,
+                          33.454424
+                        ],
+                        [
+                          -112.068023,
+                          33.454421
+                        ],
+                        [
+                          -112.067885,
+                          33.454416
+                        ],
+                        [
+                          -112.067743,
+                          33.454417
+                        ],
+                        [
+                          -112.066676,
+                          33.454419
+                        ],
+                        [
+                          -112.066256,
+                          33.454419
+                        ],
+                        [
+                          -112.066129,
+                          33.45442
+                        ],
+                        [
+                          -112.065805,
+                          33.45442
+                        ],
+                        [
+                          -112.065391,
+                          33.454421
+                        ],
+                        [
+                          -112.065242,
+                          33.454497
+                        ],
+                        [
+                          -112.065238,
+                          33.454647
+                        ],
+                        [
+                          -112.065226,
+                          33.455083
+                        ],
+                        [
+                          -112.06522,
+                          33.455322
+                        ],
+                        [
+                          -112.065215,
+                          33.455522
+                        ],
+                        [
+                          -112.065215,
+                          33.455575
+                        ],
+                        [
+                          -112.065216,
+                          33.455811
+                        ],
+                        [
+                          -112.065066,
+                          33.455812
+                        ],
+                        [
+                          -112.065061,
+                          33.455811
+                        ],
+                        [
+                          -112.064607,
+                          33.455811
+                        ],
+                        [
+                          -112.063475,
+                          33.455815
+                        ],
+                        [
+                          -112.063322,
+                          33.455816
+                        ],
+                        [
+                          -112.063313,
+                          33.455815
+                        ],
+                        [
+                          -112.062148,
+                          33.455811
+                        ],
+                        [
+                          -112.062067,
+                          33.455811
+                        ],
+                        [
+                          -112.061994,
+                          33.45581
+                        ],
+                        [
+                          -112.061344,
+                          33.455811
+                        ],
+                        [
+                          -112.060694,
+                          33.455811
+                        ],
+                        [
+                          -112.060602,
+                          33.455811
+                        ],
+                        [
+                          -112.060534,
+                          33.455811
+                        ]
+                      ]
+                    }
+                  }
+                ],
+                "dial": {
+                  "mapping": "rank",
+                  "distinct_routes": 1,
+                  "positions": [
+                    10
+                  ],
+                  "score_to_route": {
+                    "10": 10
+                  },
+                  "no_cooling_available": true,
+                  "has_balanced": false,
+                  "best_delta_c": 0.0,
+                  "best_delta_min": 0.0,
+                  "span_pct": 0.0,
+                  "n_candidates": 5,
+                  "selected_score": 10,
+                  "requested_score": null
+                },
+                "field": {},
+                "metadata": {}
+              },
+              "activity_id": "08df94a9-9b20-4095-a0af-dbc0762558f4",
+              "evidence": [],
+              "warnings": []
+            },
+            "trace": {
+              "trace_id": "9add94ab2bad",
+              "tool": "temperature_routing_read",
+              "plan_type": "premium",
+              "decision": "allow",
+              "status": "ok",
+              "latency_ms": 638,
+              "cost_credits": 0
+            }
+          },
+          "raw_text": "[LARGE_STRING_OMITTED sha256=dd69de61ebc85b10c1d9775fc058761c0ced65ad7d96e4a93711abaa744fc2b8]"
+        },
+        "polls": [
+          {
+            "poll": 1,
+            "status": "processing",
+            "elapsed_s": 8.916
+          },
+          {
+            "poll": 2,
+            "status": "completed",
+            "elapsed_s": 5.892
+          }
+        ],
+        "total_poll_elapsed_s": 17.811
+      }
+    }
+  ]
+}

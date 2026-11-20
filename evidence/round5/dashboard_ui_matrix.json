@@ -1,0 +1,138 @@
+{
+  "captured_at_utc": "2026-11-20T14:36:33.158Z",
+  "routes": [
+    {
+      "route": "/",
+      "landed_on": "https://dashboard.fortyguard.com/map",
+      "ms": 10257,
+      "nodes": 1173,
+      "app_root_children": 1075,
+      "blank": false,
+      "text_len": 276,
+      "controls_named": "51/53",
+      "canvas": 27,
+      "api": [
+        "200 /auth/verify-access?initial=true",
+        "200 /activity/dashboard-presence",
+        "200 /voting/me/vote",
+        "200 /auth/subscribed-states",
+        "200 /voting/submissions?search=&page=1&page_size=8",
+        "200 /heatmaps/?num=0",
+        "200 /activity/agent-notice/visit"
+      ],
+      "bad_status": [],
+      "errors": [],
+      "text": "Map\nSatellite\nKeyboard shortcuts\nMap data ©2026 Google\nTerms\nReport a map error\nGo to...\nHeatmaps\nCreate heatmap\nFind the Coolest Route\nDemo Heatmaps\nLoad More Heatmaps\nSettings\nFeature Updates\nFeedbacks\nProfile\nTask Progress\nRecent activities\nNo task generation in progress"
+    },
+    {
+      "route": "/map",
+      "landed_on": "https://dashboard.fortyguard.com/map",
+      "ms": 9307,
+      "nodes": 1173,
+      "app_root_children": 1075,
+      "blank": false,
+      "text_len": 276,
+      "controls_named": "51/53",
+      "canvas": 27,
+      "api": [
+        "200 /auth/verify-access",
+        "200 /activity/dashboard-presence",
+        "200 /voting/me/vote",
+        "200 /auth/subscribed-states",
+        "200 /voting/submissions?search=&page=1&page_size=8",
+        "200 /heatmaps/?num=0"
+      ],
+      "bad_status": [],
+      "errors": [],
+      "text": "Map\nSatellite\nKeyboard shortcuts\nMap data ©2026 Google\nTerms\nReport a map error\nGo to...\nHeatmaps\nCreate heatmap\nFind the Coolest Route\nDemo Heatmaps\nLoad More Heatmaps\nSettings\nFeature Updates\nFeedbacks\nProfile\nTask Progress\nRecent activities\nNo task generation in progress"
+    },
+    {
+      "route": "/activity",
+      "landed_on": "https://dashboard.fortyguard.com/",
+      "ms": 9266,
+      "nodes": 37,
+      "app_root_children": 7,
+      "blank": false,
+      "text_len": 0,
+      "controls_named": "0/0",
+      "canvas": 0,
+      "api": [],
+      "bad_status": [],
+      "errors": [],
+      "text": ""
+    },
+    {
+      "route": "/monitoring",
+      "landed_on": "https://dashboard.fortyguard.com/",
+      "ms": 9281,
+      "nodes": 37,
+      "app_root_children": 7,
+      "blank": false,
+      "text_len": 0,
+      "controls_named": "0/0",
+      "canvas": 0,
+      "api": [],
+      "bad_status": [],
+      "errors": [],
+      "text": ""
+    },
+    {
+      "route": "/routing",
+      "landed_on": "https://dashboard.fortyguard.com/",
+      "ms": 9286,
+      "nodes": 36,
+      "app_root_children": 7,
+      "blank": false,
+      "text_len": 0,
+      "controls_named": "0/0",
+      "canvas": 0,
+      "api": [],
+      "bad_status": [],
+      "errors": [],
+      "text": ""
+    },
+    {
+      "route": "/mcp/connect",
+      "landed_on": "https://dashboard.fortyguard.com/mcp/connect",
+      "ms": 9287,
+      "nodes": 43,
+      "app_root_children": 12,
+      "blank": false,
+      "text_len": 189,
+      "controls_named": "0/0",
+      "canvas": 0,
+      "api": [],
+      "bad_status": [],
+      "errors": [],
+      "text": "Connect FortyGuard\nNo valid connection was found. Start by connecting FortyGuard from your AI client.\nTo cancel, close this tab and disconnect or restart the connection in your AI client."
+    },
+    {
+      "route": "/login",
+      "landed_on": "https://dashboard.fortyguard.com/map",
+      "ms": 10132,
+      "nodes": 1173,
+      "app_root_children": 1075,
+      "blank": false,
+      "text_len": 276,
+      "controls_named": "51/53",
+      "canvas": 27,
+      "api": [
+        "200 /auth/verify-access?initial=true",
+        "200 /activity/dashboard-presence",
+        "200 /voting/me/vote",
+        "200 /auth/subscribed-states",
+        "200 /voting/submissions?search=&page=1&page_size=8",
+        "200 /heatmaps/?num=0"
+      ],
+      "bad_status": [],
+      "errors": [],
+      "text": "Map\nSatellite\nKeyboard shortcuts\nMap data ©2026 Google\nTerms\nReport a map error\nGo to...\nHeatmaps\nCreate heatmap\nFind the Coolest Route\nDemo Heatmaps\nLoad More Heatmaps\nSettings\nFeature Updates\nFeedbacks\nProfile\nTask Progress\nRecent activities\nNo task generation in progress"
+    }
+  ],
+  "reload": {
+    "nodes": 1173,
+    "app_root_children": 1075,
+    "text_len": 276,
+    "url": "https://dashboard.fortyguard.com/map"
+  }
+}

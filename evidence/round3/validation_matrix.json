@@ -1,0 +1,346 @@
+{
+  "ledger": [
+    {
+      "label": "start",
+      "c": {
+        "used": 11340,
+        "remaining": 988660,
+        "breakdown": [
+          {
+            "name": "Heatmap Generation",
+            "credits": 8440,
+            "count": 2,
+            "percentage": 0.84
+          },
+          {
+            "name": "Environment Parameter Analysis",
+            "credits": 2900,
+            "count": 1,
+            "percentage": 0.29
+          },
+          {
+            "name": "Unused Credits",
+            "credits": 988660,
+            "count": 0,
+            "percentage": 98.87
+          }
+        ]
+      }
+    },
+    {
+      "label": "after-validation",
+      "c": {
+        "used": 11340,
+        "remaining": 988660,
+        "breakdown": [
+          {
+            "name": "Heatmap Generation",
+            "credits": 8440,
+            "count": 2,
+            "percentage": 0.84
+          },
+          {
+            "name": "Environment Parameter Analysis",
+            "credits": 2900,
+            "count": 1,
+            "percentage": 0.29
+          },
+          {
+            "name": "Unused Credits",
+            "credits": 988660,
+            "count": 0,
+            "percentage": 98.87
+          }
+        ]
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case": "missing polygon_aoi",
+      "http": 422,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 422,
+        "message": "Field 'polygon_aoi' is required.",
+        "field": "polygon_aoi",
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "polygon_aoi"
+            ],
+            "msg": "Field required",
+            "input": {
+              "date_time": {
+                "start_date": "2025-09-20",
+                "start_time": "12:00",
+                "filter_type": 1
+              },
+              "granularity": 100
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "missing date_time",
+      "http": 422,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 422,
+        "message": "Field 'date_time' is required.",
+        "field": "date_time",
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "date_time"
+            ],
+            "msg": "Field required",
+            "input": {
+              "polygon_aoi": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -112.08,
+                      33.44
+                    ],
+                    [
+                      -112.068,
+                      33.44
+                    ],
+                    [
+                      -112.068,
+                      33.452
+                    ],
+                    [
+                      -112.08,
+                      33.452
+                    ],
+                    [
+                      -112.08,
+                      33.44
+                    ]
+                  ]
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "missing start_time (filter_type 1)",
+      "http": 500,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "message": "Something went wrong on our side. Please try again in a moment, or contact support@fortyguard.com if it keeps failing."
+      }
+    },
+    {
+      "case": "granularity=50 (invalid)",
+      "http": 422,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 422,
+        "message": "Field 'granularity' is invalid: Input should be 20, 60, 80 or 100",
+        "field": "granularity",
+        "detail": [
+          {
+            "type": "literal_error",
+            "loc": [
+              "body",
+              "granularity"
+            ],
+            "msg": "Input should be 20, 60, 80 or 100",
+            "input": 50,
+            "ctx": {
+              "expected": "20, 60, 80 or 100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "granularity as string '100'",
+      "http": 422,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 422,
+        "message": "Field 'granularity' is invalid: Input should be 20, 60, 80 or 100",
+        "field": "granularity",
+        "detail": [
+          {
+            "type": "literal_error",
+            "loc": [
+              "body",
+              "granularity"
+            ],
+            "msg": "Input should be 20, 60, 80 or 100",
+            "input": "100",
+            "ctx": {
+              "expected": "20, 60, 80 or 100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "filter_type=5",
+      "http": 422,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 422,
+        "message": "Field 'date_time.filter_type' is invalid: Input should be 1, 2, 3 or 4",
+        "field": "date_time.filter_type",
+        "detail": [
+          {
+            "type": "literal_error",
+            "loc": [
+              "body",
+              "date_time",
+              "filter_type"
+            ],
+            "msg": "Input should be 1, 2, 3 or 4",
+            "input": 5,
+            "ctx": {
+              "expected": "1, 2, 3 or 4"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "start_date 2018-12-31",
+      "http": 400,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 400,
+        "message": "Field 'date_time.start_date' (2018-12-31) is before the earliest supported date (2021-01-01). This request date is not accepted; available data may start later or vary by source.",
+        "field": "date_time.start_date",
+        "code": "NO_COVERAGE"
+      }
+    },
+    {
+      "case": "start_time '25:00'",
+      "http": 500,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "message": "Something went wrong on our side. Please try again in a moment, or contact support@fortyguard.com if it keeps failing."
+      }
+    },
+    {
+      "case": "filter_type=4, end 32 days later",
+      "http": 500,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "message": "Something went wrong on our side. Please try again in a moment, or contact support@fortyguard.com if it keeps failing."
+      }
+    },
+    {
+      "case": "self-intersecting bowtie",
+      "http": 400,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 400,
+        "message": "Polygon must have a nonzero area.",
+        "field": "polygon_aoi"
+      }
+    },
+    {
+      "case": "unclosed ring (4 points)",
+      "http": 400,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 400,
+        "message": "Polygon ring is not closed: the first and last positions must be identical.",
+        "field": "polygon_aoi.coordinates[0]"
+      }
+    },
+    {
+      "case": "unknown field foo",
+      "http": 200,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Heatmap Submitted Successfully",
+        "data": {
+          "activity_id": "08b9a475-3ae4-454b-9a36-a518a887d1ec"
+        }
+      }
+    },
+    {
+      "case": "extra: env_params lat=91",
+      "http": 422,
+      "envelope": "top-level message+field",
+      "body": {
+        "error": true,
+        "status_code": 422,
+        "message": "Field 'latitude' is required.",
+        "field": "latitude",
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "latitude"
+            ],
+            "msg": "Field required",
+            "input": {
+              "lat": 91
+            }
+          },
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "longitude"
+            ],
+            "msg": "Field required",
+            "input": {
+              "lat": 91
+            }
+          },
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "temperature"
+            ],
+            "msg": "Field required",
+            "input": {
+              "lat": 91
+            }
+          },
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "date_time"
+            ],
+            "msg": "Field required",
+            "input": {
+              "lat": 91
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,584 @@
+{
+  "captured_at_utc": "2026-11-20T18:32:01Z",
+  "base": "https://dashboard-api.apps.fortyguard.com",
+  "read_only": true,
+  "identities": {
+    "A": {
+      "label": "A",
+      "status": 200,
+      "ms": 1.387,
+      "bytes": 894,
+      "envelope_keys": [
+        "error",
+        "status_code",
+        "message",
+        "data"
+      ],
+      "data_type": "dict",
+      "data_keys": [
+        "us_scope_notice_seen",
+        "email_address",
+        "agent_notice_done",
+        "tour_seen",
+        "photo_url",
+        "tour_step",
+        "demo_heatmap_id",
+        "account_state",
+        "account_id",
+        "agent_notice_visits",
+        "role",
+        "subscriptions",
+        "welcomed",
+        "user_settings",
+        "full_name",
+        "date_joined",
+        "org_name",
+        "activity_groups",
+        "billing_account",
+        "allowed_features",
+        "uploaded_video_segmentation_file"
+      ],
+      "account_id": "acc#yv6qAlebfv",
+      "role": "paid",
+      "allowed_features": [
+        "mapping",
+        "analytics-stats"
+      ],
+      "demo_heatmap_id": "4660b071-960b-4ac5-8074-a8fc99e711a3",
+      "user_settings": {
+        "temperature": "F",
+        "distance": "mi",
+        "measurementUnit": "Imperial"
+      },
+      "subscription_keys": [
+        "base_subscription"
+      ],
+      "subscription_id": "free",
+      "location_id": "New York",
+      "subscription_status": null
+    },
+    "B": {
+      "label": "B",
+      "status": 200,
+      "ms": 3.629,
+      "bytes": 858,
+      "envelope_keys": [
+        "error",
+        "status_code",
+        "message",
+        "data"
+      ],
+      "data_type": "dict",
+      "data_keys": [
+        "us_scope_notice_seen",
+        "email_address",
+        "agent_notice_done",
+        "tour_seen",
+        "photo_url",
+        "demo_heatmap_id",
+        "tour_step",
+        "account_state",
+        "account_id",
+        "agent_notice_visits",
+        "role",
+        "subscriptions",
+        "welcomed",
+        "user_settings",
+        "org_name",
+        "date_joined",
+        "activity_groups",
+        "full_name",
+        "billing_account",
+        "allowed_features",
+        "uploaded_video_segmentation_file"
+      ],
+      "account_id": "acc#sflQyqyHFX",
+      "role": "paid",
+      "allowed_features": [
+        "mapping",
+        "analytics-stats"
+      ],
+      "demo_heatmap_id": "f56541b9-c93c-4347-b846-a93aea5bec1c",
+      "user_settings": {
+        "temperature": "F",
+        "distance": "mi",
+        "measurementUnit": "Imperial"
+      },
+      "subscription_keys": [
+        "base_subscription"
+      ],
+      "subscription_id": "free",
+      "location_id": "New York",
+      "subscription_status": null
+    }
+  },
+  "paired_reads": [
+    {
+      "path": "/heatmaps/?num=0",
+      "results": {
+        "A": {
+          "path": "/heatmaps/?num=0",
+          "extra_headers": [],
+          "status": 200,
+          "ms": 1.331,
+          "content_length": null,
+          "content_encoding": "gzip",
+          "bytes": 2411,
+          "decoded": true,
+          "sha256": "7d6fc6c853cb491b",
+          "message": "Successfully fetched",
+          "keys": [
+            "error",
+            "status_code",
+            "message",
+            "data"
+          ],
+          "data_type": "dict",
+          "body_bytes": 2411,
+          "data_keys": [
+            "4660b071-960b-4ac5-8074-a8fc99e711a3",
+            "437f69ec-2de2-4ece-bb60-ce77f3bd0e61",
+            "total_activities"
+          ]
+        },
+        "B": {
+          "path": "/heatmaps/?num=0",
+          "extra_headers": [],
+          "status": 200,
+          "ms": 1.391,
+          "content_length": null,
+          "content_encoding": "gzip",
+          "bytes": 1061,
+          "decoded": true,
+          "sha256": "d837e799639241a3",
+          "message": "Successfully fetched",
+          "keys": [
+            "error",
+            "status_code",
+            "message",
+            "data"
+          ],
+          "data_type": "dict",
+          "body_bytes": 1061,
+          "data_keys": [
+            "f56541b9-c93c-4347-b846-a93aea5bec1c",
+            "total_activities"
+          ]
+        }
+      },
+      "identical_across_accounts": false
+    },
+    {
+      "path": "/activity/user-stats",
+      "results": {
+        "A": {
+          "path": "/activity/user-stats",
+          "extra_headers": [],
+          "status": 200,
+          "ms": 1.606,
+          "content_length": null,
+          "content_encoding": "gzip",
+          "bytes": 339,
+          "decoded": true,
+          "sha256": "2295f290a8743f5c",
+          "message": "Updated",
+          "keys": [
+            "error",
+            "status_code",
+            "message",
+            "data"
+          ],
+          "data_type": "dict",
+          "body_bytes": 339,
+          "data_keys": [
+            "role",
+            "total_heatmaps",
+            "user_type",
+            "current_count",
+            "reached_limit",
+            "max_limit",
+            "heatmaps",
+            "routes"
+          ]
+        },
+        "B": {
+          "path": "/activity/user-stats",
+          "extra_headers": [],
+          "status": 200,
+          "ms": 1.43,
+          "content_length": null,
+          "content_encoding": "gzip",
+          "bytes": 339,
+          "decoded": true,
+          "sha256": "705405ac11688b39",
+          "message": "Updated",
+          "keys": [
+            "error",
+            "status_code",
+            "message",
+            "data"
+          ],
+          "data_type": "dict",
+          "body_bytes": 339,
+          "data_keys": [
+            "role",
+            "total_heatmaps",
+            "user_type",
+            "current_count",
+            "reached_limit",
+            "max_limit",
+            "heatmaps",
+            "routes"
+          ]
+        }
+      },
+      "identical_across_accounts": false
+    },
+    {
+      "path": "/voting/submissions?search=&page=1&page_size=8",
+      "results": {
+        "A": {
+          "path": "/voting/submissions?search=&page=1&page_size=8",
+          "extra_headers": [],
+          "status": 200,
+          "ms": 1.641,
+          "content_length": null,
+          "content_encoding": "gzip",
+          "bytes": 4457,
+          "decoded": true,
+          "sha256": "245dbbad0b2c3542",
+          "message": "Submissions retrieved",
+          "keys": [
+            "error",
+            "status_code",
+            "message",
+            "data"
+          ],
+          "data_type": "dict",
+          "body_bytes": 4457,
+          "data_keys": [
+            "items",
+            "page",
+            "page_size",
+            "total",
+            "total_pages"
+          ]
+        },
+        "B": {
+          "path": "/voting/submissions?search=&page=1&page_size=8",
+          "extra_headers": [],
+          "status": 200,
+          "ms": 1.532,
+          "content_length": null,
+          "content_encoding": "gzip",
+          "bytes": 4457,
+          "decoded": true,
+          "sha256": "245dbbad0b2c3542",
+          "message": "Submissions retrieved",
+          "keys": [
+            "error",
+            "status_code",
+            "message",
+            "data"
+          ],
+          "data_type": "dict",
+          "body_bytes": 4457,
+          "data_keys": [
+            "items",
+            "page",
+            "page_size",
+            "total",
+            "total_pages"
+          ]
+        }
+      },
+      "identical_across_accounts": true
+    }
+  ],
+  "object_probes": [
+    {
+      "object_id": "4660b071-960b-4ac5-8074-a8fc99e711a3",
+      "kind": "demo_A",
+      "results": {
+        "A": {
+          "path": "/heatmaps/4660b071-960b-4ac5-8074-a8fc99e711a3",
+          "extra_headers": [],
+          "status": 200,
+          "ms": 3.155,
+          "content_length": null,
+          "content_encoding": "gzip",
+          "bytes": 2048,
+          "decoded": false,
+          "partial_body": true,
+          "sha256": "c5f89f4d172fa7b2"
+        },
+        "B": {
+          "path": "/heatmaps/4660b071-960b-4ac5-8074-a8fc99e711a3",
+          "extra_headers": [],
+          "status": 500,
+          "ms": 1.74,
+          "content_encoding": "gzip",
+          "bytes": 75,
+          "decoded": true,
+          "sha256": "3f3df3e400fd93e5",
+          "message": "Internal server error occurred",
+          "keys": [
+            "error",
+            "status_code",
+            "message"
+          ],
+          "data_type": "NoneType",
+          "body_bytes": 75
+        }
+      }
+    },
+    {
+      "object_id": "f56541b9-c93c-4347-b846-a93aea5bec1c",
+      "kind": "demo_B",
+      "results": {
+        "A": {
+          "path": "/heatmaps/f56541b9-c93c-4347-b846-a93aea5bec1c",
+          "extra_headers": [],
+          "status": 500,
+          "ms": 1.626,
+          "content_encoding": "gzip",
+          "bytes": 75,
+          "decoded": true,
+          "sha256": "3f3df3e400fd93e5",
+          "message": "Internal server error occurred",
+          "keys": [
+            "error",
+            "status_code",
+            "message"
+          ],
+          "data_type": "NoneType",
+          "body_bytes": 75
+        },
+        "B": {
+          "path": "/heatmaps/f56541b9-c93c-4347-b846-a93aea5bec1c",
+          "extra_headers": [],
+          "status": 200,
+          "ms": 3.308,
+          "content_length": null,
+          "content_encoding": "gzip",
+          "bytes": 2048,
+          "decoded": false,
+          "partial_body": true,
+          "sha256": "c5f89f4d172fa7b2"
+        }
+      }
+    },
+    {
+      "object_id": "activity_id",
+      "kind": "54d3a618-42e8-48d6-bed6-31dc374d2743",
+      "results": {
+        "A": {
+          "path": "/heatmaps/activity_id",
+          "extra_headers": [],
+          "status": 500,
+          "ms": 1.283,
+          "content_encoding": "gzip",
+          "bytes": 75,
+          "decoded": true,
+          "sha256": "3f3df3e400fd93e5",
+          "message": "Internal server error occurred",
+          "keys": [
+            "error",
+            "status_code",
+            "message"
+          ],
+          "data_type": "NoneType",
+          "body_bytes": 75
+        },
+        "B": {
+          "path": "/heatmaps/activity_id",
+          "extra_headers": [],
+          "status": 500,
+          "ms": 1.658,
+          "content_encoding": "gzip",
+          "bytes": 75,
+          "decoded": true,
+          "sha256": "3f3df3e400fd93e5",
+          "message": "Internal server error occurred",
+          "keys": [
+            "error",
+            "status_code",
+            "message"
+          ],
+          "data_type": "NoneType",
+          "body_bytes": 75
+        }
+      }
+    }
+  ],
+  "credits": [
+    {
+      "caller": "A",
+      "owner": "A",
+      "signature": "114B 038f77b75d748cb4",
+      "path": "/activity/get-credits?account-id=acc%23yv6qAlebfv",
+      "extra_headers": [],
+      "status": 200,
+      "ms": 1.351,
+      "content_length": null,
+      "content_encoding": "gzip",
+      "bytes": 114,
+      "decoded": true,
+      "sha256": "038f77b75d748cb4",
+      "message": "Successfully fetched",
+      "keys": [
+        "error",
+        "status_code",
+        "message",
+        "data"
+      ],
+      "data_type": "list",
+      "body_bytes": 114,
+      "data_len": 2
+    },
+    {
+      "caller": "A",
+      "owner": "B",
+      "signature": "114B 038f77b75d748cb4",
+      "path": "/activity/get-credits?account-id=acc%23sflQyqyHFX",
+      "extra_headers": [],
+      "status": 200,
+      "ms": 1.119,
+      "content_length": null,
+      "content_encoding": "gzip",
+      "bytes": 114,
+      "decoded": true,
+      "sha256": "038f77b75d748cb4",
+      "message": "Successfully fetched",
+      "keys": [
+        "error",
+        "status_code",
+        "message",
+        "data"
+      ],
+      "data_type": "list",
+      "body_bytes": 114,
+      "data_len": 2
+    },
+    {
+      "caller": "B",
+      "owner": "A",
+      "signature": "114B 038f77b75d748cb4",
+      "path": "/activity/get-credits?account-id=acc%23yv6qAlebfv",
+      "extra_headers": [],
+      "status": 200,
+      "ms": 1.846,
+      "content_length": null,
+      "content_encoding": "gzip",
+      "bytes": 114,
+      "decoded": true,
+      "sha256": "038f77b75d748cb4",
+      "message": "Successfully fetched",
+      "keys": [
+        "error",
+        "status_code",
+        "message",
+        "data"
+      ],
+      "data_type": "list",
+      "body_bytes": 114,
+      "data_len": 2
+    },
+    {
+      "caller": "B",
+      "owner": "B",
+      "signature": "114B 038f77b75d748cb4",
+      "path": "/activity/get-credits?account-id=acc%23sflQyqyHFX",
+      "extra_headers": [],
+      "status": 200,
+      "ms": 1.324,
+      "content_length": null,
+      "content_encoding": "gzip",
+      "bytes": 114,
+      "decoded": true,
+      "sha256": "038f77b75d748cb4",
+      "message": "Successfully fetched",
+      "keys": [
+        "error",
+        "status_code",
+        "message",
+        "data"
+      ],
+      "data_type": "list",
+      "body_bytes": 114,
+      "data_len": 2
+    }
+  ],
+  "header_override": [
+    {
+      "caller": "A",
+      "claimed": "B",
+      "signature": "339B 2295f290a8743f5c",
+      "path": "/activity/user-stats",
+      "extra_headers": [
+        "X-Account-Id"
+      ],
+      "status": 200,
+      "ms": 1.313,
+      "content_length": null,
+      "content_encoding": "gzip",
+      "bytes": 339,
+      "decoded": true,
+      "sha256": "2295f290a8743f5c",
+      "message": "Updated",
+      "keys": [
+        "error",
+        "status_code",
+        "message",
+        "data"
+      ],
+      "data_type": "dict",
+      "body_bytes": 339,
+      "data_keys": [
+        "role",
+        "total_heatmaps",
+        "user_type",
+        "current_count",
+        "reached_limit",
+        "max_limit",
+        "heatmaps",
+        "routes"
+      ]
+    },
+    {
+      "caller": "B",
+      "claimed": "A",
+      "signature": "339B 705405ac11688b39",
+      "path": "/activity/user-stats",
+      "extra_headers": [
+        "X-Account-Id"
+      ],
+      "status": 200,
+      "ms": 1.226,
+      "content_length": null,
+      "content_encoding": "gzip",
+      "bytes": 339,
+      "decoded": true,
+      "sha256": "705405ac11688b39",
+      "message": "Updated",
+      "keys": [
+        "error",
+        "status_code",
+        "message",
+        "data"
+      ],
+      "data_type": "dict",
+      "body_bytes": 339,
+      "data_keys": [
+        "role",
+        "total_heatmaps",
+        "user_type",
+        "current_count",
+        "reached_limit",
+        "max_limit",
+        "heatmaps",
+        "routes"
+      ]
+    }
+  ]
+}

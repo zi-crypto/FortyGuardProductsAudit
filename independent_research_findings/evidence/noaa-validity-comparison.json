@@ -1,0 +1,21 @@
+{
+  "source": "NOAA/NCEI Integrated Surface Database, ISD hourly file",
+  "source_url": "https://www.ncei.noaa.gov/pub/data/noaa/2024/722780-23183-2024.gz",
+  "station": "Phoenix Sky Harbor International Airport (722780-23183)",
+  "target_local": "2024-07-15 14:00 America/Phoenix",
+  "target_utc": "2024-07-15 21:00Z",
+  "observation": {
+    "raw_tmp_field": "+04001",
+    "raw_dewpoint_field": "+01611",
+    "air_temperature_c": 40.0,
+    "dewpoint_c": 16.1,
+    "record_sha256": "bddc5b951a3f4933896226764e335599d38c1239c82151489afee7f107483c21"
+  },
+  "comparison": {
+    "fortyguard_input_temperature_c": 35.0,
+    "fortyguard_modeled_apparent_temperature_c": 40.7,
+    "fortyguard_modeled_heat_index_c": 33.4,
+    "station_air_temperature_c": 40.0
+  },
+  "interpretation": "The station air temperature is a sanity-check reference only. It is not a validation target for a modeled urban microclimate/apparent-temperature field at a different spatial scale. The 5.0 C difference between the supplied FortyGuard point temperature and this station observation should not be treated as a model error without a spatial/temporal matchup and source-definition reconciliation."
+}

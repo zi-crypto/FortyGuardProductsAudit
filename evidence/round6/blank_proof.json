@@ -1,0 +1,384 @@
+{
+  "captured_at_utc": "2026-11-20T18:35:55.239Z",
+  "chrome": "Chrome/157.0.8103.38",
+  "cache_disabled": true,
+  "rows": [
+    {
+      "route": "/activity",
+      "mode": "cold",
+      "landed_on": "https://dashboard.fortyguard.com/",
+      "state": {
+        "url": "https://dashboard.fortyguard.com/",
+        "ng_version": "20.3.35",
+        "nodes": 37,
+        "body_children": 4,
+        "body_html_len": 487,
+        "text_len": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "scripts": 7,
+        "canvas": 0,
+        "viewport": [
+          1440,
+          900
+        ]
+      },
+      "empty_document": true,
+      "doc_responses": [
+        {
+          "status": 200,
+          "url": "https://dashboard.fortyguard.com/activity"
+        }
+      ],
+      "script_statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "exceptions": [],
+      "console_errors": [],
+      "plain_png": {
+        "file": "shots/proof__activity_cold_plain.png",
+        "bytes": 5851,
+        "sha256": "99db2a93b06fa1bf"
+      },
+      "overlay_png": {
+        "file": "shots/proof__activity_cold_overlay.png",
+        "bytes": 17738,
+        "sha256": "9d9a55cb5608f12b"
+      },
+      "overlay_injected": true,
+      "overlay_rendered": true
+    },
+    {
+      "route": "/monitoring",
+      "mode": "cold",
+      "landed_on": "https://dashboard.fortyguard.com/",
+      "state": {
+        "url": "https://dashboard.fortyguard.com/",
+        "ng_version": "20.3.35",
+        "nodes": 37,
+        "body_children": 4,
+        "body_html_len": 487,
+        "text_len": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "scripts": 7,
+        "canvas": 0,
+        "viewport": [
+          1440,
+          900
+        ]
+      },
+      "empty_document": true,
+      "doc_responses": [
+        {
+          "status": 200,
+          "url": "https://dashboard.fortyguard.com/monitoring"
+        }
+      ],
+      "script_statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "exceptions": [],
+      "console_errors": [],
+      "plain_png": {
+        "file": "shots/proof__monitoring_cold_plain.png",
+        "bytes": 5851,
+        "sha256": "99db2a93b06fa1bf"
+      },
+      "overlay_png": {
+        "file": "shots/proof__monitoring_cold_overlay.png",
+        "bytes": 17738,
+        "sha256": "9d9a55cb5608f12b"
+      },
+      "overlay_injected": true,
+      "overlay_rendered": true
+    },
+    {
+      "route": "/routing",
+      "mode": "cold",
+      "landed_on": "https://dashboard.fortyguard.com/",
+      "state": {
+        "url": "https://dashboard.fortyguard.com/",
+        "ng_version": "20.3.35",
+        "nodes": 37,
+        "body_children": 4,
+        "body_html_len": 487,
+        "text_len": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "scripts": 7,
+        "canvas": 0,
+        "viewport": [
+          1440,
+          900
+        ]
+      },
+      "empty_document": true,
+      "doc_responses": [
+        {
+          "status": 200,
+          "url": "https://dashboard.fortyguard.com/routing"
+        }
+      ],
+      "script_statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "exceptions": [],
+      "console_errors": [],
+      "plain_png": {
+        "file": "shots/proof__routing_cold_plain.png",
+        "bytes": 5851,
+        "sha256": "99db2a93b06fa1bf"
+      },
+      "overlay_png": {
+        "file": "shots/proof__routing_cold_overlay.png",
+        "bytes": 17738,
+        "sha256": "9d9a55cb5608f12b"
+      },
+      "overlay_injected": true,
+      "overlay_rendered": true
+    },
+    {
+      "route": "/map",
+      "mode": "cold",
+      "landed_on": "https://dashboard.fortyguard.com/map",
+      "state": {
+        "url": "https://dashboard.fortyguard.com/map",
+        "ng_version": "20.3.35",
+        "nodes": 994,
+        "body_children": 5,
+        "body_html_len": 105256,
+        "text_len": 250,
+        "bg": "rgba(0, 0, 0, 0)",
+        "scripts": 21,
+        "canvas": 27,
+        "viewport": [
+          1440,
+          900
+        ]
+      },
+      "empty_document": false,
+      "doc_responses": [
+        {
+          "status": 200,
+          "url": "https://dashboard.fortyguard.com/map"
+        }
+      ],
+      "script_statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "exceptions": [],
+      "console_errors": [],
+      "plain_png": {
+        "file": "shots/proof__map_cold_plain.png",
+        "bytes": 59853,
+        "sha256": "b47c8a3e2d7ffd18"
+      },
+      "overlay_png": {
+        "file": "shots/proof__map_cold_overlay.png",
+        "bytes": 19632,
+        "sha256": "82ac63616584a579"
+      },
+      "overlay_injected": true,
+      "overlay_rendered": true
+    },
+    {
+      "route": "/map",
+      "mode": "cold-reload",
+      "landed_on": "https://dashboard.fortyguard.com/map",
+      "state": {
+        "url": "https://dashboard.fortyguard.com/map",
+        "ng_version": "20.3.35",
+        "nodes": 610,
+        "body_children": 5,
+        "body_html_len": 51331,
+        "text_len": 163,
+        "bg": "rgba(0, 0, 0, 0)",
+        "scripts": 11,
+        "canvas": 0,
+        "viewport": [
+          1440,
+          900
+        ]
+      },
+      "empty_document": false,
+      "doc_responses": [
+        {
+          "status": 200,
+          "url": "https://dashboard.fortyguard.com/map"
+        },
+        {
+          "status": 200,
+          "url": "https://dashboard.fortyguard.com/map"
+        }
+      ],
+      "script_statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "exceptions": [],
+      "console_errors": [],
+      "plain_png": {
+        "file": "shots/proof__map_cold-reload_plain.png",
+        "bytes": 32626,
+        "sha256": "e792c1b04a0ce1b0"
+      },
+      "overlay_png": {
+        "file": "shots/proof__map_cold-reload_overlay.png",
+        "bytes": 19522,
+        "sha256": "d80e256178bdc3e1"
+      },
+      "overlay_injected": true,
+      "overlay_rendered": true
+    }
+  ],
+  "nav_controls": [
+    {
+      "tag": "A",
+      "text": "",
+      "href": "https://maps.google.com/maps?ll=42.78781,-75.776474&z=7&t=m&hl=en-US&gl=US&mapclient=apiv3",
+      "role": null,
+      "aria": "Open this area in Google Maps (opens a new window)"
+    },
+    {
+      "tag": "A",
+      "text": "Terms",
+      "href": "https://www.google.com/intl/en-US_US/help/terms_maps.html",
+      "role": null,
+      "aria": "Terms (opens in new tab)"
+    },
+    {
+      "tag": "A",
+      "text": "Report a map error",
+      "href": "https://www.google.com/maps/@42.7878096,-75.7764739,7z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3",
+      "role": null,
+      "aria": "Report a map error (opens in new tab)"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Create heatmap",
+      "href": null,
+      "role": null,
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Find the Coolest Route",
+      "href": null,
+      "role": null,
+      "aria": null
+    },
+    {
+      "tag": "DIV",
+      "text": "Demo Heatmaps",
+      "href": null,
+      "role": "button",
+      "aria": "Demo Heatmaps"
+    },
+    {
+      "tag": "A",
+      "text": "Demo Heatmaps",
+      "href": null,
+      "role": null,
+      "aria": null
+    },
+    {
+      "tag": "DIV",
+      "text": "Heatmap Information",
+      "href": null,
+      "role": "button",
+      "aria": "Heatmap Information"
+    },
+    {
+      "tag": "A",
+      "text": "Heatmap Information",
+      "href": null,
+      "role": null,
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Route",
+      "href": null,
+      "role": null,
+      "aria": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Heatmaps",
+      "href": null,
+      "role": null,
+      "aria": null
+    }
+  ],
+  "inapp_demo_click": {
+    "clicked": false,
+    "after": {
+      "url": "https://dashboard.fortyguard.com/map",
+      "ng_version": "20.3.35",
+      "nodes": 1208,
+      "body_children": 5,
+      "body_html_len": 153749,
+      "text_len": 330,
+      "bg": "rgba(0, 0, 0, 0)",
+      "scripts": 20,
+      "canvas": 27,
+      "viewport": [
+        1440,
+        900
+      ]
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "captured_at_utc": "2026-11-20T18:34:08.164Z",
+  "chrome": "Chrome/157.0.8103.38",
+  "axe_core": "4.14.1",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa",
+    "best-practice"
+  ],
+  "scans": [
+    {
+      "label": "dashboard_map_authenticated",
+      "url": "https://dashboard.fortyguard.com/map",
+      "title": "Temperature Dashboard™",
+      "elements_tested": 1200,
+      "violations": [
+        {
+          "id": "image-alt",
+          "impact": "critical",
+          "help": "Images must have alternative text",
+          "wcag": [
+            "wcag2a",
+            "wcag111"
+          ],
+          "nodes": 2,
+          "targets": [
+            "img[src$=\"geolocation.svg\"]",
+            ".profile-pic"
+          ],
+          "sample": "  Element does not have an alt attribute |   aria-label attribute does not exist or is empty"
+        },
+        {
+          "id": "label",
+          "impact": "critical",
+          "help": "Form elements must have labels",
+          "wcag": [
+            "wcag2a",
+            "wcag412"
+          ],
+          "nodes": 1,
+          "targets": [
+            "input[role=\"combobox\"]"
+          ],
+          "sample": "  Element does not have an implicit (wrapped) <label> |   Element does not have an explicit <label>"
+        },
+        {
+          "id": "meta-viewport",
+          "impact": "moderate",
+          "help": "Zooming and scaling must not be disabled",
+          "wcag": [
+            "wcag2aa",
+            "wcag144"
+          ],
+          "nodes": 1,
+          "targets": [
+            "meta[name=\"viewport\"]"
+          ],
+          "sample": "  maximum-scale=1 on <meta> tag disables zooming on mobile devices"
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "wcag": [],
+          "nodes": 17,
+          "targets": [
+            ".gm-style > div:nth-child(1) > div:nth-child(1)",
+            "#map > div > .gm-style > div:nth-child(14)",
+            "#\\38 F7146CA-446A-4BF8-9878-976B46468AC4"
+          ],
+          "sample": "  Some page content is not contained by landmarks"
+        }
+      ],
+      "passes": 41,
+      "incomplete": []
+    },
+    {
+      "label": "login_unauthenticated",
+      "url": "https://dashboard.fortyguard.com/login",
+      "title": "Temperature Dashboard™",
+      "elements_tested": 80,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "wcag": [
+            "wcag2aa",
+            "wcag143"
+          ],
+          "nodes": 2,
+          "targets": [
+            ".forgot-link",
+            ".switch-link > a"
+          ],
+          "sample": "  Element has insufficient color contrast of 3.52 (foreground color: #0091d0, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "id": "image-alt",
+          "impact": "critical",
+          "help": "Images must have alternative text",
+          "wcag": [
+            "wcag2a",
+            "wcag111"
+          ],
+          "nodes": 1,
+          "targets": [
+            ".background-image"
+          ],
+          "sample": "  Element does not have an alt attribute |   aria-label attribute does not exist or is empty"
+        },
+        {
+          "id": "image-redundant-alt",
+          "impact": "minor",
+          "help": "Alternative text of images should not be repeated as text",
+          "wcag": [],
+          "nodes": 1,
+          "targets": [
+            ".google-icon"
+          ],
+          "sample": "  Element contains <img> element with alt text that duplicates existing text"
+        },
+        {
+          "id": "meta-viewport",
+          "impact": "moderate",
+          "help": "Zooming and scaling must not be disabled",
+          "wcag": [
+            "wcag2aa",
+            "wcag144"
+          ],
+          "nodes": 1,
+          "targets": [
+            "meta[name=\"viewport\"]"
+          ],
+          "sample": "  maximum-scale=1 on <meta> tag disables zooming on mobile devices"
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "help": "All page content should be contained by landmarks",
+          "wcag": [],
+          "nodes": 10,
+          "targets": [
+            ".auth-background",
+            ".logo-container",
+            ".welcome-text"
+          ],
+          "sample": "  Some page content is not contained by landmarks"
+        }
+      ],
+      "passes": 24,
+      "incomplete": []
+    }
+  ]
+}

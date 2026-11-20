@@ -1,0 +1,90 @@
+{
+  "exceedance 30C above, 2025-09-20..22": {
+    "stats": {
+      "activity_id": "cf30c0ac-2046-417a-acf8-4796b9ed9470",
+      "analytic_type": "exceedance",
+      "units": "hour",
+      "calculation_version": 2,
+      "n_cells": 117,
+      "window_utc": {
+        "start": "2025-09-20T07:00:00+00:00",
+        "end": "2025-09-23T06:00:00+00:00",
+        "end_inclusive": true
+      },
+      "value_representation": "nearest_catalog_cell",
+      "threshold_celsius": 30.0,
+      "direction": "above",
+      "min": 48,
+      "max": 48,
+      "mean": 48.0
+    },
+    "tiles": 117,
+    "elapsed": 36.7
+  },
+  "persistence 30C above, same window": {
+    "stats": {
+      "activity_id": "9acd8617-ccae-4536-9327-6f07338cc90f",
+      "analytic_type": "persistence",
+      "units": "hour",
+      "calculation_version": 2,
+      "n_cells": 117,
+      "window_utc": {
+        "start": "2025-09-20T07:00:00+00:00",
+        "end": "2025-09-23T06:00:00+00:00",
+        "end_inclusive": true
+      },
+      "value_representation": "nearest_catalog_cell",
+      "threshold_celsius": 30.0,
+      "direction": "above",
+      "min": 18,
+      "max": 19,
+      "mean": 18.333333333333332
+    },
+    "tiles": 117,
+    "elapsed": 22.4
+  },
+  "time_of_measure, 2025-09-20 12:00 local": {
+    "stats": {
+      "activity_id": "4c5e1593-4112-4e9b-ba03-66e6d9e49995",
+      "analytic_type": "time_of_measure",
+      "units": "hour",
+      "calculation_version": 2,
+      "n_cells": 117,
+      "window_utc": {
+        "start": "2025-09-20T19:00:00+00:00",
+        "end": "2025-09-20T19:00:00+00:00",
+        "end_inclusive": true
+      },
+      "value_representation": "nearest_catalog_cell",
+      "tie_rule": "earliest_timestamp",
+      "hour_counts_utc": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        117,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "tiles": 117,
+    "elapsed": 27.2
+  }
+}

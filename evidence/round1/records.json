@@ -1,0 +1,348 @@
+[
+  {
+    "name": "credits POST /v1/system/fetch-api-key-usage",
+    "method": "POST",
+    "url": "/v1/system/fetch-api-key-usage",
+    "status": 422,
+    "ms": 1043.7,
+    "body": {
+      "error": true,
+      "status_code": 422,
+      "message": "Field 'api_key' is required.",
+      "field": "api_key",
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "api_key"
+          ],
+          "msg": "Field required",
+          "input": {}
+        }
+      ]
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "69"
+    },
+    "note": ""
+  },
+  {
+    "name": "credits POST /v1/system/fetch-api-key-custom-usage",
+    "method": "POST",
+    "url": "/v1/system/fetch-api-key-custom-usage",
+    "status": 422,
+    "ms": 1021.0,
+    "body": {
+      "error": true,
+      "status_code": 422,
+      "message": "Field 'api_key' is required.",
+      "field": "api_key",
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "api_key"
+          ],
+          "msg": "Field required",
+          "input": {}
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "start_date"
+          ],
+          "msg": "Field required",
+          "input": {}
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "end_date"
+          ],
+          "msg": "Field required",
+          "input": {}
+        }
+      ]
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "183"
+    },
+    "note": ""
+  },
+  {
+    "name": "credits GET /v1/system/fetch-api-key-usage",
+    "method": "GET",
+    "url": "/v1/system/fetch-api-key-usage",
+    "status": 405,
+    "ms": 1022.8,
+    "body": {
+      "detail": "Method Not Allowed"
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "39"
+    },
+    "note": ""
+  },
+  {
+    "name": "no key at all",
+    "method": "GET",
+    "url": "/v1/status/abc",
+    "status": 401,
+    "ms": 917.8,
+    "body": {
+      "error": true,
+      "status_code": 401,
+      "details": {
+        "message": "Missing required 'api-key' header. Send your key in the 'api-key' request header."
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "67"
+    },
+    "note": ""
+  },
+  {
+    "name": "empty api-key header",
+    "method": "GET",
+    "url": "/v1/status/abc",
+    "status": 401,
+    "ms": 921.2,
+    "body": {
+      "error": true,
+      "status_code": 401,
+      "details": {
+        "message": "The 'api-key' header value cannot be empty."
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "49"
+    },
+    "note": ""
+  },
+  {
+    "name": "invalid key",
+    "method": "GET",
+    "url": "/v1/status/abc",
+    "status": 401,
+    "ms": 1020.3,
+    "body": {
+      "error": true,
+      "status_code": 401,
+      "details": {
+        "message": "Invalid or unknown API key."
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "136"
+    },
+    "note": ""
+  },
+  {
+    "name": "wrong header name (Authorization Bearer)",
+    "method": "GET",
+    "url": "/v1/status/abc",
+    "status": 401,
+    "ms": 920.1,
+    "body": {
+      "error": true,
+      "status_code": 401,
+      "details": {
+        "message": "Missing required 'api-key' header. Send your key in the 'api-key' request header."
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "33"
+    },
+    "note": ""
+  },
+  {
+    "name": "key in query string",
+    "method": "GET",
+    "url": "/v1/status/abc?api-key=<REDACTED_KEY>",
+    "status": 401,
+    "ms": 918.3,
+    "body": {
+      "error": true,
+      "status_code": 401,
+      "details": {
+        "message": "Missing required 'api-key' header. Send your key in the 'api-key' request header."
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "44"
+    },
+    "note": ""
+  },
+  {
+    "name": "lowercase header (api_key)",
+    "method": "GET",
+    "url": "/v1/status/abc",
+    "status": 401,
+    "ms": 888.6,
+    "body": {
+      "error": true,
+      "status_code": 401,
+      "details": {
+        "message": "Missing required 'api-key' header. Send your key in the 'api-key' request header."
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "14"
+    },
+    "note": ""
+  },
+  {
+    "name": "OPTIONS preflight",
+    "method": "OPTIONS",
+    "url": "/v1/heatmap",
+    "status": 200,
+    "ms": 760.7,
+    "body": "OK",
+    "headers": {
+      "server": "envoy",
+      "content-type": "text/plain; charset=utf-8",
+      "content-length": "2",
+      "access-control-allow-origin": "*",
+      "access-control-allow-headers": "api-key,content-type",
+      "x-envoy-upstream-service-time": "51"
+    },
+    "note": ""
+  },
+  {
+    "name": "heatmap: quickstart payload",
+    "method": "POST",
+    "url": "/v1/heatmap",
+    "status": 400,
+    "ms": 1620.7,
+    "body": {
+      "error": true,
+      "status_code": 400,
+      "message": "FortyGuard currently provides data only for supported regions within the United States. The requested location is outside supported U.S. coverage. Availability within the United States also depends on the tool, location, date, and data source.",
+      "field": "polygon_aoi",
+      "code": "OUT_OF_COVERAGE"
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-ratelimit-limit": "300",
+      "x-ratelimit-remaining": "299",
+      "x-envoy-upstream-service-time": "856"
+    },
+    "note": ""
+  },
+  {
+    "name": "unknown activity id",
+    "method": "GET",
+    "url": "/v1/status/00000000-0000-0000-0000-000000000000",
+    "status": 404,
+    "ms": 1636.0,
+    "body": {
+      "error": true,
+      "status_code": 404,
+      "details": {
+        "message": "No activity found for the provided activity_id."
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "815"
+    },
+    "note": ""
+  },
+  {
+    "name": "malformed activity id",
+    "method": "GET",
+    "url": "/v1/status/not-a-uuid",
+    "status": 404,
+    "ms": 1635.5,
+    "body": {
+      "error": true,
+      "status_code": 404,
+      "details": {
+        "message": "No activity found for the provided activity_id."
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-envoy-upstream-service-time": "754"
+    },
+    "note": ""
+  },
+  {
+    "name": "env_params phoenix",
+    "method": "POST",
+    "url": "/v1/env_params",
+    "status": 200,
+    "ms": 3167.9,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Environment Parameters Analysis Submitted Successfully",
+      "data": {
+        "activity_id": "54d3a618-42e8-48d6-bed6-31dc374d2743"
+      }
+    },
+    "headers": {
+      "server": "envoy",
+      "content-type": "application/json",
+      "x-ratelimit-limit": "300",
+      "x-ratelimit-remaining": "298",
+      "x-envoy-upstream-service-time": "2283"
+    },
+    "note": ""
+  },
+  {
+    "name": "MCP initialize",
+    "method": "POST",
+    "url": "/mcp",
+    "status": 200,
+    "ms": 2161.0,
+    "body": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2025-06-18\",\"capabilities\":{\"logging\":{},\"prompts\":{\"listChanged\":true},\"resources\":{\"subscribe\":false,\"listChanged\":true},\"tools\":{\"listChanged\":true}},\"serverInfo\":{\"name\":\"FortyGuard\",\"version\":\"4.0.11\"}}}\r\n\r\n",
+    "headers": {
+      "server": "envoy",
+      "cache-control": "no-cache, no-transform",
+      "content-type": "text/event-stream",
+      "x-envoy-upstream-service-time": "1043"
+    },
+    "note": ""
+  },
+  {
+    "name": "MCP tools/list",
+    "method": "POST",
+    "url": "/mcp",
+    "status": 200,
+    "ms": 2643.8,
+    "body": "event: message\r\ndata: {\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"tools\":[{\"_meta\":{\"securitySchemes\":[{\"type\":\"oauth2\",\"scopes\":[\"analysis:read\"]}],\"fastmcp\":{\"tags\":[]}},\"annotations\":{\"destructiveHint\":false,\"idempotentHint\":true,\"openWorldHint\":false,\"readOnlyHint\":true,\"title\":\"Credit Balance\"},\"description\":\"Read your available Enterprise API credits; free and read-only.\",\"inputSchema\":{\"properties\":{},\"type\":\"object\",\"additionalProperties\":false,\"title\":\"CreditBalanceInput\"},\"name\":\"credit_balance\",\"outputSchema\":{\"properties\":{\"available_credits\":{\"title\":\"Available Credits\",\"type\":\"integer\"}},\"required\":[\"available_credits\"],\"type\":\"object\",\"title\":\"CreditBalanceValue\"},\"title\":\"Credit Balance\"},{\"_meta\":{\"securitySchemes\":[{\"type\":\"oauth2\",\"scopes\":[\"analysis:run\"]}],\"fastmcp\":{\"tags\":[]}},\"annotations\":{\"destructiveHint\":false,\"idempotentHint\":false,\"openWorldHint\":true,\"readOnlyHint\":false,\"title\":\"Environmental Parameters\"},\"description\":\"Point-level environmental conditions for a single coordinate and date \u00e2\u0080\u0094 e.g. provider-sourced apparent temperature, wet-bulb temperature, humidity, precipitation, and AQI, plus modeled clear-sky solar irradiance estimates (GHI, DNI, and DHI in W/m\u00c2\u00b2). Provide the location's temperature in Celsius, supplied by the user or obtained from a reliable source. If it is unavailable, ask the user; never invent, assume, or silently substitute a temperature. heat_index_celsius is derived from this temperature and provider-sourced relative humidity. Use for a single location's numeric values, not area-wide maps or written reports. Historical temperature requests start at 2021-01-01; provider availability varies by location, date, and parameter. Future dates are unsupported. Paid: 2,110 credits on basic/startup, 2,900 on premium/hackathon. Show the user the exact parameters and expected credit cost, and ask for confirmation before execution. FortyGuard currently provides data only for supported regions within the United States. Requests outside supported U.S. coverage are not allowed. Availability within the United States also depends on the tool, location, date, and underlying data coverage.\",\"inputSchema\":{\"properties\":{\"heatmap_id\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Existing Dashboard heatmap reference\",\"title\":\"Heatmap Id\"},\"latitude\":{\"maximum\":90,\"minimum\":-90,\"title\":\"Latitude\",\"type\":\"number\"},\"longitude\":{\"maximum\":180,\"minimum\":-180,\"title\":\"Longitude\",\"type\":\"number\"},\"temperature\":{\"description\":\"Caller-supplied reference temperature in degrees Celsius. Used with provider-sourced relative humidity to calculate heat_index_celsius.\",\"title\":\"Temperature\",\"type\":\"number\"},\"date_time\":{\"properties\":{\"start_date\":{\"description\":\"Start date in YYYY-MM-DD format\",\"title\":\"Start Date\",\"type\":\"string\"},\"end_date\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"End date in YYYY-MM-DD format\",\"title\":\"End Date\"},\"start_time\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"Start time in HH:MM 24h format, local to the requested coordinates; the timezone is inferred.\",\"title\":\"Start Time\"},\"end_time\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"null\"}],\"default\":null,\"description\":\"End time in HH:MM 24h format, local to the requested coordinates; the timezone is inferred.\",\"title\":\"End Time\"},\"filter_type\":{\"description\":\"1=single hour, 2=range of hours, 3=single day, 4=range of days (week/month, <=1 month)\",\"enum\":[1,2,3,4],\"title\":\"Filter Type\",\"type\":\"integer\"}},\"required\":[\"start_date\",\"filter_type\"],\"title\":\"SegmentationDateTimeRange\",\"type\":\"object\"},\"analysis\":{\"anyOf\":[{\"items\":{\"description\":\"Environmental measurements available for selection.\",\"enum\":[\"heat_index_celsius\",\"apparent_temperature_celsius\",\"wet_bulb_temperature_celsius\",\"relative_humidity_percent\",\"precipitation_mm\",\"cloud_cover_octas\",\"elevation_meters\",\"aqi_us\",\"aqi_us_pm25\",\"aqi_us_pm10\",\"aqi_us_no2\",\"aqi_us_co\",\"aqi_us_o3\",\"aqi_us_so2\",\"met",
+    "headers": {
+      "server": "envoy",
+      "cache-control": "no-cache, no-transform",
+      "content-type": "text/event-stream",
+      "x-envoy-upstream-service-time": "1602"
+    },
+    "note": ""
+  }
+]

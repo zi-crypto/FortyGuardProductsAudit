@@ -1,0 +1,97 @@
+========================================
+Axe-core WCAG 2.2 AA scan — live readout
+========================================
+Run: node scripts/dashboard_axe.mjs
+Captured at: 2026-11-20T15:38:31.769Z
+Chrome: Chrome/157.0.8103.38
+Axe-core: 4.14.1
+Tags: wcag2a wcag2aa wcag21a wcag21aa wcag22aa best-practice
+
+SCAN 1 — dashboard_map_authenticated
+  URL: https://dashboard.fortyguard.com/map
+  Title: Temperature Dashboard™
+  Elements tested: 1162
+
+  Violations:
+    [critical] image-alt (2 nodes, wcag2a wcag111)
+      Images must have alternative text
+      Targets:
+        img[src$="geolocation.svg"]
+        .profile-pic
+      Note: these images lack a meaningful text alternative.
+
+    [critical] label (1 node, wcag2a wcag412)
+      Form elements must have labels
+      Target:
+        input[role="combobox"]
+      Note: this combobox has no accessible name/label.
+
+    [moderate] meta-viewport (1 node, wcag2aa wcag144)
+      Zooming and scaling must not be disabled
+      Target:
+        meta[name="viewport"]
+      Note: maximum-scale=1 disables zoom on mobile.
+
+    [moderate] region (17 nodes)
+      All page content should be contained by landmarks
+      Targets include:
+        .gm-style > div:nth-child(1) > div:nth-child(1)
+      Note: Google Maps iframe content is a big part of this count.
+
+    [serious] scrollable-region-focusable (1 node, wcag2a wcag211 wcag213)
+      Scrollable region must have keyboard access
+      Target:
+        .tasks-container
+      Note: this scrollable region should be reachable by keyboard.
+
+SCAN 2 — login_unauthenticated
+  URL: https://dashboard.fortyguard.com/login
+  Elements tested: 80
+
+  Violations:
+    [serious] color-contrast (2 nodes, wcag2aa wcag143)
+      Elements must meet minimum color contrast ratio thresholds
+      Target:
+        .forgot-link
+      Note: link color does not meet contrast minima.
+
+    [critical] image-alt (1 node, wcag2a wcag111)
+      Images must have alternative text
+      Target:
+        .background-image
+      Note: background image has no text alternative.
+
+    [minor] image-redundant-alt (1 node)
+      Alternative text of images should not be repeated as text
+      Target:
+        .google-icon
+
+    [moderate] meta-viewport (1 node, wcag2aa wcag144)
+      Zooming and scaling must not be disabled
+      Target:
+        meta[name="viewport"]
+      Note: maximum-scale=1 again.
+
+    [moderate] region (10 nodes)
+      All page content should be contained by landmarks
+      Targets include:
+        .auth-background
+
+SUMMARY
+  Two scans, same tag set, both surfaces flagged.
+  Map page: critical image-alt and label issues, plus the viewport and
+  landmark issues inherited from the embedded map content.
+  Login page: serious color-contrast and critical image-alt issues, plus
+  viewport and landmark issues.
+
+WHAT WE STILL DO NOT KNOW
+  - Full numbered list of every target node beyond the samples above.
+  - Any repeated pattern in the region violations beyond the map iframe.
+  - Whether these same issues appear on the blank deep-link pages, since
+    those pages are empty and may not even be testable by axe.
+
+INTERPRETATION
+  - The map page is largely functional and tested, but has real WCAG 2.2 AA
+    violations, some critical.
+  - The login page also has real violations, some critical and some serious.
+  - The viewport maximum-scale=1 issue is repeatable across both surfaces.

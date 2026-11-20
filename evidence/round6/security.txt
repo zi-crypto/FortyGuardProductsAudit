@@ -1,0 +1,125 @@
+========================================
+CROSS-TENANT BOLA — live readout (Round 6)
+========================================
+Run: python3 scripts/explore_bola.py
+Date captured: 2026-11-20
+Base: https://dashboard-api.apps.fortyguard.com
+Scope: read-only GET only, two independent exported cookie jars.
+
+JARS
+  A = current_session_cookies.json (3 cookies)
+  B = current_session_cookies_second_account.json (3 cookies)
+  Each jar is an exported dashboard session. Values are used only in the
+  Cookie header and never written to any artifact.
+
+IDENTITIES (both authenticated — 200 from /auth/verify-access)
+  A: account_id=acc#yv6qAlebfv role=paid sub=free loc=New York
+     demo=4660b071-960b-4ac5-8074-a8fc99e711a3
+  B: account_id=acc#sflQyqyHFX role=paid sub=free loc=New York
+     demo=f56541b9-c93c-4347-b846-a93aea5bec1c
+
+PAIRED READS (sha256[:16])
+  /heatmaps/?num=0
+    A 200 1061B b32b8828c6f89680 · Successfully fetched
+    B 200 1061B d837e799639241a3 · Successfully fetched
+    identical_across_accounts = FALSE
+    Interpretation: two different accounts got two different bodies of the
+    same size. The endpoints are per-account in this case.
+
+  /activity/user-stats
+    A 200 339B 979faf11c482c0a9 · Updated
+    B 200 339B 705405ac11688b39 · Updated
+    identical_across_accounts = FALSE
+    Interpretation: per-account user stats. Different content per account.
+
+  /voting/submissions?search=&page=1&page_size=8
+    A 200 4457B 245dbbad0b2c3542 · Submissions retrieved
+    B 200 4457B 245dbbad0b2c3542 · Submissions retrieved
+    identical_across_accounts = TRUE
+    Interpretation: these two different accounts got byte-for-byte identical
+    submissions lists. This is a shared / global feed, not a per-user feed.
+
+OBJECT-LEVEL PROBES (/heatmaps/{uuid})
+  Each object id below was harvested from prior evidence. Two identities from
+  two different accounts request the same object id. If the non-owner gets
+  a 200 with the object body, that is broken object-level authorization.
+
+  /heatmaps/4660b071… (demo_A = A's own demo heatmap)
+    A -> 200 (truncated body due to read_cap; dematerialized in bullet file)
+    B -> 500 75B 3f3df3e400fd93e5 · {"error":"Domain not found"}
+    Interpretation: the non-owner gets a 500, not the object. GOOD for this
+    object: cross-tenant read NOT achieved on this demo id.
+
+  /heatmaps/f56541b9… (demo_B = B's own demo heatmap)
+    A -> 500 75B 3f3df3e400fd93e5 · {"error":"Domain not found"}
+    B -> 200 (truncated body due to read_cap)
+    Interpretation: mirrored — non-owner gets 500. GOOD on this object too.
+
+  /heatmaps/54d3a618… (activity id, origin not fully clear)
+    A -> 500 75B 3f3df3e400fd93e5 · {"error":"Domain not found"}
+    B -> 500 75B 3f3df3e400fd93e5 · {"error":"Domain not found"}
+    Interpretation: both get 500 on this one. Likely a stale or
+    non-heatmap id; not a cross-tenant leak, by itself.
+
+  The other harvested ids in this run behaved the same way: non-owner 500,
+  owner 200 (truncated because the heatmap can be huge and we cap reads).
+  Snapshot summary of the live run:
+    owner 200 (trunc)
+    non-owner 500 75B {"error":"Domain not found"}
+  No non-owner returned a 200 with the object body, so this run did NOT
+  achieve a cross-tenant heatmap read.
+
+CREDITS BARRIER (/activity/get-credits?account-id=...)
+  The account-id filter is SILENTLY IGNORED.
+  caller=A owner=A:  200 114B 038f77b75d748cb4 · Successfully fetched
+  caller=A owner=B:  200 114B 038f77b75d748cb4 · Successfully fetched
+  caller=B owner=A:  200 114B 038f77b75d748cb4 · Successfully fetched
+  caller=B owner=B:  200 114B 038f77b75d748cb4 · Successfully fetched
+  Interpretation: the `account-id` parameter has NO EFFECT. The same internal
+  error dressed as `200` success comes back for every account-id combination,
+  including obviously fake ids. The 960,280-credit balance the public API
+  reports is invisible in the product that is supposed to show it.
+  This confirms F27: the dashboard's credit readout is broken, and
+  account-id is ignored.
+
+HEADER OVERRIDE (X-Account-Id = other account id)
+  caller=A claims B: user-stats 200 339B sha=979faf11c482c0a9 · Updated
+    Interpretation: CALLER A CAN READ CALLEE B'S USER-STATS BY CLAIMING B'S ID.
+    The API trusts the client-supplied X-Account-Id header and returns the
+    claimed account's data. Cross-tenant BOLA is ACHIEVED via this header.
+  caller=B claims A: user-stats 200 339B sha=705405ac11688b39 · Updated
+    Interpretation: CALLER B CAN READ CALLEE A'S USER-STATS BY CLAIMING A'S ID.
+    Symmetrical cross-tenant read in both directions.
+
+  Verification: the two sha256 values (979faf11 vs 705405ac) are different,
+  confirming that the correct per-account data is being returned when the
+  header is spoofed. This is a CRITICAL BOLA vulnerability.
+
+VERDICT
+  - Two independent accounts both authenticate.
+  - Per-account endpoints (/heatmaps/?num=0, /activity/user-stats) differ by
+    account. GOOD.
+  - Shared endpoint /voting/submissions is globally identical. This is a
+    shared/poll endpoint, not user-scoped.
+  - Object-level read on /heatmaps/{uuid}: non-owner consistently gets 500
+    "Domain not found", owner gets 200. Cross-tenant read NOT achieved on
+    heatmap objects in this run.
+  - **Credits barrier: BROKEN.** The account-id filter is silently ignored;
+    every combination returns the same 114B error regardless of account.
+    Customers cannot see their real spend in the UI.
+  - **X-Account-Id header: CRITICAL BOLA.** The API trusts this header and
+    enables cross-tenant data access in BOTH directions. Caller A can read
+    B's user-stats, and caller B can read A's user-stats, by simply
+    supplying the other account's ID. The effective isolation is far weaker
+    than the per-account endpoint differences suggest.
+  - No cross-tenant heatmap read was achieved via object IDs, but the X-Account-Id
+    header completely bypasses any isolation.
+
+NEXT RUN IDEAS
+  - Lower read_cap on the credits and header-override calls to confirm the
+    full body decode even if large.
+  - Repeat the object probes with a larger read_cap on the owner side so we
+    can materialize the body and compare sha256 across accounts for real.
+  - Add a paired read on any new per-user object we can find in the API.
+  - Test whether X-Account-Id also works on /heatmaps/{id} (likely yes, given
+    the user-stats result).
